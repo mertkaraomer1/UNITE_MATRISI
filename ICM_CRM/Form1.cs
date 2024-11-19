@@ -43,7 +43,23 @@ namespace ICM_CRM
                 dataTable.Columns.Add("Mihver Çapý");
                 dataTable.Columns.Add("Perferaj Boyu");
                 dataTable.Columns.Add("Makine Çýkýþý Kaðýt Akýþý");
+                dataTable.Columns.Add("Çalýþýlacak Kaðýt Geniþliði");
+                dataTable.Columns.Add("Gofraj Desen Çalýþma Þekli");
+                dataTable.Columns.Add("Gofraj Takýmý");
+                dataTable.Columns.Add("Gofraj Adedi");
+                dataTable.Columns.Add("Tahrik Þekli");
+                dataTable.Columns.Add("Ürün Tipi");
+                dataTable.Columns.Add("Kanal Sayýsý");
+                dataTable.Columns.Add("Kaðýt Koparma Þekli");
+                dataTable.Columns.Add("Kenar Kontrol");
+                dataTable.Columns.Add("Ürün Çapý");
+                dataTable.Columns.Add("Log/dak");
+                dataTable.Columns.Add("Ürün Yüksekliði");
+                dataTable.Columns.Add("Eco ICM");
+                dataTable.Columns.Add("Log Adedi");
+                dataTable.Columns.Add("Log Loader Adedi");
 
+               
                 // Kayýtlarý DataTable'a ekle
                 foreach (var kayýt in veriler)
                 {
@@ -54,7 +70,10 @@ namespace ICM_CRM
                                        kayýt.Gofraj_Menþei, kayýt.Kaðýt_Geniþliði,
                                        kayýt.Dilme_Döndürme, kayýt.Max_Bitmiþ_Ürün_Çapý,
                                        kayýt.Katlama_Ebatý, kayýt.Mihver_Çapý,
-                                       kayýt.Perferaj_Boyu, kayýt.Makine_Çýkýþý_Kaðýt_Akýþý);
+                                       kayýt.Perferaj_Boyu, kayýt.Makine_Çýkýþý_Kaðýt_Akýþý,kayýt.Çalýþýlacak_Kaðýt_Geniþliði,
+                                       kayýt.Gofraj_Desen_Çalýþma_Þekli,kayýt.Gofraj_Takýmý,kayýt.Gofraj_Adedi,kayýt.Tahrik_Þekli,
+                                       kayýt.Ürün_Tipi,kayýt.Kanal_Sayýsý,kayýt.Kaðýt_Koparma_Þekli,kayýt.Kenar_Kontrol,
+                                       kayýt.Ürün_Çapý,kayýt.Log_dak,kayýt.Ürün_Yüksekliði,kayýt.Eco_ICM,kayýt.Log_Adedi,kayýt.Log_Loader_Adedi);
                 }
 
                 // DataGridView'e veri kaynaðý olarak ata
@@ -87,6 +106,21 @@ namespace ICM_CRM
                 string mihverÇapý = comboBox17.Text;
                 string perferajBoyu = comboBox18.Text;
                 string makineÇýkýþýKaðýtAkýþý = comboBox19.Text;
+                string ÇalýþýlacakKaðýtGeniþliði=comboBox20.Text;
+                string GofrajDesenÇalýþmaÞekli = comboBox22.Text;
+                string GofrajTakýmý = comboBox23.Text;
+                string GofrajAdedi = comboBox24.Text;
+                string TahrikÞekli = comboBox25.Text;
+                string ÜrünTipi = comboBox26.Text;
+                string KanalSayýsý = comboBox27.Text;
+                string KaðýtKoparmaÞekli = comboBox28.Text;
+                string KenarKontrol = comboBox29.Text;
+                string ÜrünÇapý = comboBox30.Text;
+                string Logdak = comboBox31.Text;
+                string ÜrünYüksekliði = comboBox32.Text;
+                string EcoICM = comboBox21.Text;
+                string LogAdedi = comboBox33.Text;
+                string LogLoaderAdedi = comboBox34.Text;
 
 
                 // Ayný kaydýn varlýðýný kontrol et
@@ -109,7 +143,19 @@ namespace ICM_CRM
                                          x.Katlama_Ebatý == katlamaEbatý &&
                                          x.Mihver_Çapý == mihverÇapý &&
                                          x.Perferaj_Boyu == perferajBoyu &&
-                                         x.Makine_Çýkýþý_Kaðýt_Akýþý == makineÇýkýþýKaðýtAkýþý);
+                                         x.Makine_Çýkýþý_Kaðýt_Akýþý == makineÇýkýþýKaðýtAkýþý&&
+                                         x.Çalýþýlacak_Kaðýt_Geniþliði== ÇalýþýlacakKaðýtGeniþliði&&
+                                         x.Gofraj_Desen_Çalýþma_Þekli== GofrajDesenÇalýþmaÞekli&&
+                                         x.Gofraj_Takýmý== GofrajTakýmý&&
+                                         x.Gofraj_Adedi== GofrajAdedi&&
+                                         x.Tahrik_Þekli== TahrikÞekli&&x.Ürün_Tipi== ÜrünTipi&&
+                                         x.Kanal_Sayýsý== KanalSayýsý&&
+                                         x.Kaðýt_Koparma_Þekli== KaðýtKoparmaÞekli&&
+                                         x.Kenar_Kontrol== KenarKontrol&&
+                                         x.Ürün_Çapý== ÜrünÇapý&&
+                                         x.Log_dak== Logdak&&x.Ürün_Yüksekliði== ÜrünYüksekliði&&
+                                         x.Eco_ICM== EcoICM&&x.Log_Adedi== LogAdedi&&
+                                         x.Log_Loader_Adedi== LogLoaderAdedi);
 
                 if (mevcutKayýt != null)
                 {
@@ -138,7 +184,22 @@ namespace ICM_CRM
                         Katlama_Ebatý = katlamaEbatý,
                         Mihver_Çapý = mihverÇapý,
                         Perferaj_Boyu = perferajBoyu,
-                        Makine_Çýkýþý_Kaðýt_Akýþý = makineÇýkýþýKaðýtAkýþý
+                        Makine_Çýkýþý_Kaðýt_Akýþý = makineÇýkýþýKaðýtAkýþý,
+                        Çalýþýlacak_Kaðýt_Geniþliði = ÇalýþýlacakKaðýtGeniþliði,
+                        Gofraj_Desen_Çalýþma_Þekli = GofrajDesenÇalýþmaÞekli,
+                        Gofraj_Takýmý = GofrajTakýmý,
+                        Gofraj_Adedi = GofrajAdedi,
+                        Tahrik_Þekli = TahrikÞekli,
+                        Ürün_Tipi = ÜrünTipi,
+                        Kanal_Sayýsý = KanalSayýsý,
+                        Kaðýt_Koparma_Þekli = KaðýtKoparmaÞekli,
+                        Kenar_Kontrol = KenarKontrol,
+                        Ürün_Çapý = ÜrünÇapý,
+                        Log_dak = Logdak,
+                        Ürün_Yüksekliði = ÜrünYüksekliði,
+                        Eco_ICM = EcoICM,
+                        Log_Adedi =LogAdedi,
+                        Log_Loader_Adedi = LogLoaderAdedi
                     };
 
                     // Yeni kaydý ekle
@@ -155,7 +216,9 @@ namespace ICM_CRM
 
                 // DataTable oluþtur
 
-               
+                dataTable.Clear();
+                dataTable.Columns.Clear();
+                dataTable.Rows.Clear();
                 // Sütunlarý ekle
                 dataTable.Columns.Add("Ünite");
                 dataTable.Columns.Add("Katlama Tipi");
@@ -176,6 +239,21 @@ namespace ICM_CRM
                 dataTable.Columns.Add("Mihver Çapý");
                 dataTable.Columns.Add("Perferaj Boyu");
                 dataTable.Columns.Add("Makine Çýkýþý Kaðýt Akýþý");
+                dataTable.Columns.Add("Çalýþýlacak Kaðýt Geniþliði");
+                dataTable.Columns.Add("Gofraj Desen Çalýþma Þekli");
+                dataTable.Columns.Add("Gofraj Takýmý");
+                dataTable.Columns.Add("Gofraj Adedi");
+                dataTable.Columns.Add("Tahrik Þekli");
+                dataTable.Columns.Add("Ürün Tipi");
+                dataTable.Columns.Add("Kanal Sayýsý");
+                dataTable.Columns.Add("Kaðýt Koparma Þekli");
+                dataTable.Columns.Add("Kenar Kontrol");
+                dataTable.Columns.Add("Ürün Çapý");
+                dataTable.Columns.Add("Log/dak");
+                dataTable.Columns.Add("Ürün Yüksekliði");
+                dataTable.Columns.Add("Eco ICM");
+                dataTable.Columns.Add("Log Adedi");
+                dataTable.Columns.Add("Log Loader Adedi");
 
                 // Kayýtlarý DataTable'a ekle
                 foreach (var kayýt in veriler)
@@ -187,7 +265,10 @@ namespace ICM_CRM
                                        kayýt.Gofraj_Menþei, kayýt.Kaðýt_Geniþliði,
                                        kayýt.Dilme_Döndürme, kayýt.Max_Bitmiþ_Ürün_Çapý,
                                        kayýt.Katlama_Ebatý, kayýt.Mihver_Çapý,
-                                       kayýt.Perferaj_Boyu, kayýt.Makine_Çýkýþý_Kaðýt_Akýþý);
+                                       kayýt.Perferaj_Boyu, kayýt.Makine_Çýkýþý_Kaðýt_Akýþý,kayýt.Çalýþýlacak_Kaðýt_Geniþliði,
+                                       kayýt.Gofraj_Desen_Çalýþma_Þekli, kayýt.Gofraj_Takýmý, kayýt.Gofraj_Adedi, kayýt.Tahrik_Þekli,
+                                       kayýt.Ürün_Tipi, kayýt.Kanal_Sayýsý, kayýt.Kaðýt_Koparma_Þekli, kayýt.Kenar_Kontrol,
+                                       kayýt.Ürün_Çapý, kayýt.Log_dak, kayýt.Ürün_Yüksekliði, kayýt.Eco_ICM, kayýt.Log_Adedi, kayýt.Log_Loader_Adedi);
                 }
 
                 // DataGridView'e veri kaynaðý olarak ata
@@ -195,6 +276,8 @@ namespace ICM_CRM
             }
 
         }
+
+
     }
 
 }

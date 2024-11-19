@@ -43,6 +43,23 @@ namespace ICM_CRM.Tables
         public string Perferaj_Boyu { get; set; }
 
         public string Makine_Çıkışı_Kağıt_Akışı { get; set; }
+        public string Çalışılacak_Kağıt_Genişliği { get; set; }
+        public string Gofraj_Desen_Çalışma_Şekli { get; set; }
+        public string Gofraj_Takımı { get; set; }
+        public string Gofraj_Adedi { get; set; }
+        public string Tahrik_Şekli { get; set; }
+        public string Ürün_Tipi { get; set; }
+        public string Kanal_Sayısı { get; set; }
+        public string Kağıt_Koparma_Şekli { get; set; }
+        public string Kenar_Kontrol { get; set; }
+        public string Ürün_Çapı { get; set; }
+        public string Log_dak { get; set; }
+        public string Ürün_Yüksekliği { get; set; }
+        public string Eco_ICM { get; set; }
+        public string Log_Adedi { get; set; }
+        public string Log_Loader_Adedi { get; set; }
+
+
 
     }
 }
